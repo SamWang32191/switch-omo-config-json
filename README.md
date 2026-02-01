@@ -13,6 +13,16 @@
 - ✨ **視覺化回饋** - 即時顯示目前啟用的配置檔（使用 md5 比對）
 - 🎯 **One Dark Pro 配色** - 使用 VS Code 熱門主題的配色方案
 
+## 專案結構
+
+```
+switch-omo-config-json/
+├── configs/                    # 配置檔目錄
+│   ├── oh-my-opencode-*.json   # 各種設定檔
+├── switch-omo-config.sh        # 主腳本
+└── README.md
+```
+
 ## 快速開始
 
 ### 安裝需求
@@ -52,7 +62,10 @@
 ### 新增自定義配置檔
 
 1. 建立新的 JSON 檔案，命名為 `oh-my-opencode-YourName.json`
-2. 放入配置目錄 (`~/.config/opencode/` 或專案 `.opencode/`)
+2. 放入配置目錄：
+   - **本專案**: `configs/` 目錄
+   - **中央配置**: `~/.config/opencode/`
+   - **專案本地**: 專案內的 `.opencode/`
 3. 執行腳本即可看到新配置
 
 ### 配置檔格式
