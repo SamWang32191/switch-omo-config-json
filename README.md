@@ -1,5 +1,7 @@
 # switch-omo-config-json
 
+> 💡 **靈感來源**: [Switch-Omo-Config](https://github.com/AnPod/Switch-Omo-Config) by AnPod
+
 一個簡潔優雅的 **oh-my-opencode** 設定檔切換工具，支援互動式選單與專案本地配置管理。
 
 ## 功能特色
