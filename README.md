@@ -40,28 +40,6 @@
    - 若偵測到當前目錄有 `.opencode` 目錄，將自動使用專案本地配置
    - 若無，會詢問是否要建立，並記住你的選擇
 
-## 配置檔結構
-
-```
-switch-omo-config-json/
-├── switch-omo-config.sh              # 主執行腳本
-├── oh-my-opencode-Antigravity.json   # 輕量級配置
-├── oh-my-opencode-CAO.json           # CAO 專用配置
-├── oh-my-opencode-CAO-Full.json      # CAO 完整配置
-├── oh-my-opencode-Free.json          # 免費模型配置
-├── oh-my-opencode-AntigravityAndFree.json  # 混合配置
-└── .switch-omo-config.create-opencode      # 用戶偏好標記檔
-```
-
-## 配置檔說明
-
-| 配置檔 | 說明 |
-|--------|------|
-| `Antigravity` | 輕量級配置，使用 Gemini Flash 等免費/輕量模型 |
-| `Free` | 完全免費模型配置 |
-| `CAO` | 平衡效能與成本的配置 |
-| `CAO-Full` | 完整功能配置，使用 Claude Opus 等高性能模型 |
-| `AntigravityAndFree` | 混合配置，兼顧輕量與免費 |
 
 ## 運作原理
 
