@@ -32,7 +32,7 @@ cd test-sandbox && bash -c 'source ../switch-omo-config.sh; check_gum'
 
 ### Prerequisites
 - `bash` (required)
-- `gum` (optional, for modern UI): `brew install gum`
+- `gum` (required): `brew install gum`
 - `md5` (macOS) or `md5sum` (Linux) for hash comparison
 
 ## Code Style Guidelines
@@ -77,16 +77,15 @@ cd test-sandbox && bash -c 'source ../switch-omo-config.sh; check_gum'
 - Use `##` for section headers within the script
 
 ### UI Patterns
-- Support both `gum` (modern) and ANSI fallback interfaces
-- Color codes defined as constants at module level
+- Uses `gum` for all interactive UI elements
 - Gum theme setup in dedicated `setup_gum_theme()` function
-- One Dark Pro color palette when using gum
+- One Dark Pro color palette
 
 ### Safety Rules
 - **NEVER** use `eval` on user input
 - **NEVER** use `rm -rf` with variables without checks
 - **ALWAYS** validate file paths before operations
-- **ALWAYS** handle missing dependencies gracefully
+- **ALWAYS** check required dependencies (`gum`) at startup and exit with clear error message if missing
 
 ## JSON Profile Structure
 
