@@ -235,7 +235,9 @@ show_menu() {
         # Find selected index
         local selected_idx=-1
         for i in "${!names[@]}"; do
-            if [[ "${names[$i]}" == "$selected_name" ]]; then
+            local name_display
+            name_display=$(get_display_name "${names[$i]}")
+            if [[ "$name_display" == "$selected_name" ]]; then
                 selected_idx=$i
                 break
             fi
