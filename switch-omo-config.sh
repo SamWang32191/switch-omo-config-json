@@ -179,6 +179,16 @@ get_configs() {
     } | sort -u
 }
 
+# Extract display name from filename (remove prefix and suffix)
+# Input: oh-my-opencode-Name.json → Output: Name
+get_display_name() {
+    local filename="$1"
+    local basename_name
+    basename_name=$(basename "$filename")
+    # Remove oh-my-opencode- prefix and .json suffix
+    echo "${basename_name#oh-my-opencode-}" | sed 's/\.json$//'
+}
+
 # Get current active config by comparing content
 get_current() {
     if [[ ! -f "$TARGET_FILE" ]]; then
@@ -235,13 +245,15 @@ show_menu() {
             --width 50 \
             "⚡ Switch oh-my-opencode Configuration"
 
-        # Prepare display names with active marker
+        # Prepare display names with active marker (show only the descriptive part)
         local display_names=()
         for name in "${names[@]}"; do
+            local display_name
+            display_name=$(get_display_name "$name")
             if [[ "$name" == "$current" ]]; then
-                display_names+=("${name} ✓")
+                display_names+=("${display_name} ✓")
             else
-                display_names+=("${name}")
+                display_names+=("${display_name}")
             fi
         done
 
@@ -325,6 +337,8 @@ show_menu() {
             # Draw menu
             for i in "${!names[@]}"; do
                 local name="${names[$i]}"
+                local display_name
+                display_name=$(get_display_name "$name")
                 local marker="  "
                 local color=""
                 local suffix=""
@@ -337,9 +351,9 @@ show_menu() {
                 if [[ $i -eq $selected ]]; then
                     marker="${YELLOW}>${NC} "
                     color="${CYAN}"
-                    echo -e "${marker}${color}${name}${NC}${suffix}"
+                    echo -e "${marker}${color}${display_name}${NC}${suffix}"
                 else
-                    echo -e "  ${DIM}${name}${NC}${suffix}"
+                    echo -e "  ${DIM}${display_name}${NC}${suffix}"
                 fi
             done
 
