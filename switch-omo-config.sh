@@ -141,7 +141,7 @@ setup_gum_theme
 get_configs() {
     {
         find "$CONFIG_DIR" -maxdepth 1 -name "oh-my-opencode-*.json" -type f 2>/dev/null
-        find "$SCRIPT_DIR" -maxdepth 1 -name "oh-my-opencode-*.json" -type f 2>/dev/null
+        find "$SCRIPT_DIR/configs" -maxdepth 1 -name "oh-my-opencode-*.json" -type f 2>/dev/null
     } | sort -u
 }
 
