@@ -14,17 +14,73 @@ check_gum() {
     fi
 }
 
-# Setup Gum theme - One Dark Pro (VS Code inspired)
+# Detect terminal theme (light/dark) based on macOS system appearance
+# Returns: sets global THEME_MODE to "dark" or "light"
+detect_terminal_theme() {
+    # Check if we're on macOS (defaults command exists)
+    if ! command -v defaults >/dev/null 2>&1; then
+        # Not macOS - default to dark for compatibility
+        THEME_MODE="dark"
+        return
+    fi
+    
+    # On macOS: AppleInterfaceStyle = "Dark" when dark mode
+    # Key doesn't exist when in light mode (system default)
+    local appearance
+    appearance=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
+    
+    if [[ "$appearance" == "Dark" ]]; then
+        THEME_MODE="dark"
+    else
+        # Key doesn't exist or has other value = light mode
+        THEME_MODE="light"
+    fi
+}
+
+# Setup Gum theme - supports One Dark Pro (dark) and One Light Pro (light)
 setup_gum_theme() {
-    # One Dark Pro color palette
-    local bg="#282c34"           # Background
-    local fg="#abb2bf"           # Foreground text
-    local blue="#61afef"         # Primary accent (blue)
-    local green="#98c379"        # Success (green)
-    local red="#e06c75"          # Error (red)
-    local yellow="#e5c07b"       # Warning (yellow)
-    local purple="#c678dd"       # Secondary accent (purple)
-    local cyan="#56b6c2"         # Tertiary accent (cyan)
+    # Detect theme if not already set
+    if [[ -z "$THEME_MODE" ]]; then
+        detect_terminal_theme
+    fi
+
+    # Color palette based on theme
+    if [[ "$THEME_MODE" == "light" ]]; then
+        # One Light Pro color palette
+        local bg="#fafafa"           # Background
+        local fg="#383a42"           # Foreground text
+        local blue="#4078f2"         # Primary accent (blue)
+        local green="#50a14f"        # Success (green)
+        local red="#e45649"          # Error (red)
+        local yellow="#c18401"       # Warning (yellow)
+        local purple="#a626a4"       # Secondary accent (purple)
+        local cyan="#0184bc"         # Tertiary accent (cyan)
+        local muted="#a0a1a7"        # Muted/secondary text
+        local unselected_bg="#e5e5e6" # Unselected button background
+    else
+        # One Dark Pro color palette (default)
+        local bg="#282c34"           # Background
+        local fg="#abb2bf"           # Foreground text
+        local blue="#61afef"         # Primary accent (blue)
+        local green="#98c379"        # Success (green)
+        local red="#e06c75"          # Error (red)
+        local yellow="#e5c07b"       # Warning (yellow)
+        local purple="#c678dd"       # Secondary accent (purple)
+        local cyan="#56b6c2"         # Tertiary accent (cyan)
+        local muted="#5c6370"        # Muted/secondary text
+        local unselected_bg="#3e4451" # Unselected button background
+    fi
+
+    # Export theme colors as global variables for use in show_menu
+    export THEME_BG="$bg"
+    export THEME_FG="$fg"
+    export THEME_BLUE="$blue"
+    export THEME_GREEN="$green"
+    export THEME_RED="$red"
+    export THEME_YELLOW="$yellow"
+    export THEME_PURPLE="$purple"
+    export THEME_CYAN="$cyan"
+    export THEME_MUTED="$muted"
 
     # Style settings
     export GUM_STYLE_BORDER="rounded"
@@ -49,7 +105,7 @@ setup_gum_theme() {
     export GUM_CONFIRM_SELECTED_FOREGROUND="$bg"
     export GUM_CONFIRM_SELECTED_BACKGROUND="$green"
     export GUM_CONFIRM_UNSELECTED_FOREGROUND="$fg"
-    export GUM_CONFIRM_UNSELECTED_BACKGROUND="#3e4451"
+    export GUM_CONFIRM_UNSELECTED_BACKGROUND="$unselected_bg"
 }
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -185,7 +241,7 @@ show_menu() {
 
     if [[ ${#configs[@]} -eq 0 ]]; then
         setup_gum_theme
-        gum style --foreground="#e5c07b" --margin "1 0" \
+        gum style --foreground="$THEME_YELLOW" --margin "1 0" \
             "No oh-my-opencode-*.json config files found in $CONFIG_DIR"
         exit 1
     fi
@@ -197,8 +253,8 @@ show_menu() {
     # Show styled header
         gum style \
             --border rounded \
-            --border-foreground "#61afef" \
-            --background "#282c34" \
+            --border-foreground "$THEME_BLUE" \
+            --background "$THEME_BG" \
             --margin "1 0" \
             --padding "2 4" \
             --align center \
@@ -225,7 +281,7 @@ show_menu() {
 
         # Check if user cancelled (empty selection)
         if [[ -z "$selected_display" ]]; then
-            gum style --foreground "#5c6370" --margin "1 0" "Cancelled."
+            gum style --foreground "$THEME_MUTED" --margin "1 0" "Cancelled."
             exit 0
         fi
 
@@ -244,7 +300,7 @@ show_menu() {
         done
 
         if [[ $selected_idx -eq -1 ]]; then
-            gum style --foreground "#e06c75" --margin "1 0" "Error: Selection not found"
+            gum style --foreground "$THEME_RED" --margin "1 0" "Error: Selection not found"
             exit 1
         fi
 
@@ -252,7 +308,7 @@ show_menu() {
 
         # Check if already active
         if [[ "$selected_name" == "$current" ]]; then
-            gum style --foreground "#e5c07b" --margin "1 0" \
+            gum style --foreground "$THEME_YELLOW" --margin "1 0" \
                 "$selected_name is already active."
             exit 0
         fi
@@ -263,15 +319,15 @@ show_menu() {
         if [[ $? -eq 0 ]]; then
             gum style \
                 --border rounded \
-                --border-foreground "#98c379" \
-                --background "#282c34" \
+                --border-foreground "$THEME_GREEN" \
+                --background "$THEME_BG" \
                 --margin "1 0" \
                 --padding "1 2" \
                 "✓ Switched to: $selected_name"
-            gum style --foreground "#5c6370" --margin "0" \
+            gum style --foreground "$THEME_MUTED" --margin "0" \
                 "Copied to: $TARGET_FILE"
         else
-            gum style --foreground "#e06c75" --margin "1 0" \
+            gum style --foreground "$THEME_RED" --margin "1 0" \
                 "✗ Error: Failed to copy config file"
             exit 1
         fi
