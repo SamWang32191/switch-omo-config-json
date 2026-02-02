@@ -25,11 +25,11 @@
       "variant": "high"
     },
     "sisyphus-junior": {
-      "model": "openai/gpt-5.1-codex-mini",
+      "model": "google/antigravity-gemini-3-flash",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "OpenCode-Builder": {
-      "model": "openai/gpt-5.1-codex-mini",
+      "model": "google/antigravity-gemini-3-flash",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "oracle": {
@@ -38,7 +38,7 @@
       "variant": "high"
     },
     "librarian": {
-      "model": "google/gemini-3-flash-preview",
+      "model": "google/antigravity-gemini-3-flash",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "explore": {
@@ -77,24 +77,25 @@
   "categories": {
     "visual-engineering": {
       "model": "google/antigravity-gemini-3-pro",
+      "variant": "high",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "ultrabrain": {
-      "model": "openai/gpt-5.2-codex",
-      "variant": "xhigh",
+      "model": "google/antigravity-gemini-3-pro",
+      "variant": "high",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "artistry": {
-      "model": "google/gemini-3-pro-preview",
+      "model": "google/antigravity-gemini-3-pro",
       "variant": "max",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "quick": {
-      "model": "google/gemini-3-flash-preview",
+      "model": "google/antigravity-gemini-3-flash",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "unspecified-low": {
-      "model": "google/gemini-3-flash-preview",
+      "model": "google/antigravity-gemini-3-flash",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "unspecified-high": {
@@ -103,7 +104,7 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "writing": {
-      "model": "google/gemini-3-flash-preview",
+      "model": "google/antigravity-gemini-3-flash",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     }
   }
