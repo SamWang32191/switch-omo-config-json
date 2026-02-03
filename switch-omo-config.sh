@@ -267,16 +267,16 @@ show_menu() {
             local display_name
             display_name=$(get_display_name "$name")
             if [[ "$name" == "$current" ]]; then
-                display_names+=("${display_name} ✓")
+                display_names+=("● ${display_name}")
             else
-                display_names+=("${display_name}")
+                display_names+=("○ ${display_name}")
             fi
         done
 
         # Use gum choose for selection
         local selected_display
         selected_display=$(printf "%s\n" "${display_names[@]}" | gum choose \
-            --header "Select configuration (active marked with ✓):" \
+            --header "Select configuration (● = active, ○ = inactive):" \
             --height 15)
 
         # Check if user cancelled (empty selection)
@@ -285,8 +285,9 @@ show_menu() {
             exit 0
         fi
 
-        # Extract original name (remove ✓ marker if present)
-        local selected_name="${selected_display% ✓}"
+        # Extract original name (remove marker prefix)
+        local selected_name="${selected_display#● }"
+        selected_name="${selected_name#○ }"
 
         # Find selected index
         local selected_idx=-1
@@ -305,11 +306,12 @@ show_menu() {
         fi
 
         local selected_file="${configs[$selected_idx]}"
+        local selected_basename="${names[$selected_idx]}"
 
         # Check if already active
-        if [[ "$selected_name" == "$current" ]]; then
+        if [[ "$selected_basename" == "$current" ]]; then
             gum style --foreground "$THEME_YELLOW" --margin "1 0" \
-                "$selected_name is already active."
+                "$selected_name 已是目前啟用的配置。"
             exit 0
         fi
 
