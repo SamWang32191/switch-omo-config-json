@@ -7,7 +7,9 @@
     "agents": false,
     "hooks": false
   },
-  "disabled_hooks": ["comment-checker"],
+  "disabled_hooks": [
+    "comment-checker"
+  ],
   "sisyphus_agent": {
     "disabled": false,
     "default_builder_enabled": true,
@@ -76,7 +78,7 @@
   },
   "categories": {
     "visual-engineering": {
-      "model": "google/gemini-3-pro-preview",
+      "model": "google/antigravity-gemini-3-pro",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "ultrabrain": {
@@ -85,7 +87,7 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "artistry": {
-      "model": "google/gemini-3-pro-preview",
+      "model": "google/antigravity-gemini-3-pro",
       "variant": "max",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
@@ -103,7 +105,7 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "writing": {
-      "model": "google/gemini-3-flash-preview",
+      "model": "google/antigravity-gemini-3-flash",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     }
   }

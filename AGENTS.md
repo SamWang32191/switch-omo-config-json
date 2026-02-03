@@ -25,10 +25,10 @@ oh-my-opencode 設定檔切換工具，提供互動式 TUI 選單（使用 gum�
 
 ## 關鍵檔案
 
-| 檔案 | 用途 | 說明 |
-|------|------|------|
-| `switch-omo-config.sh` | 主程式 | 互動式配置切換邏輯 |
-| `configs/*.json` | 設定檔 | oh-my-opencode 代理與類別模型設定 |
+| 檔案                   | 用途   | 說明                              |
+| ---------------------- | ------ | --------------------------------- |
+| `switch-omo-config.sh` | 主程式 | 互動式配置切換邏輯                |
+| `configs/*.json`       | 設定檔 | oh-my-opencode 代理與類別模型設定 |
 
 ## 設定檔類型
 
@@ -43,7 +43,7 @@ oh-my-opencode 設定檔切換工具，提供互動式 TUI 選單（使用 gum�
 - sisyphus: `google/antigravity-claude-opus-4-5-thinking`
 - ultrabrain: `openai/gpt-5.2-codex`
 - oracle: `openai/gpt-5.2`
-- quick: `google/gemini-3-flash-preview`
+- quick: `google/antigravity-gemini-3-flash`
 
 所有設定檔統一附加：`ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).`
 
