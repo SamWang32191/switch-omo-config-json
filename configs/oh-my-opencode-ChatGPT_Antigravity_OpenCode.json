@@ -46,7 +46,9 @@
       "model": "google/antigravity-gemini-3-flash",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).",
       "permission": {
-        "edit": "deny",
+        "edit": "deny",        
+        "ls": "allow",
+        "grep": "allow",
         "bash": "ask",
         "webfetch": "allow"
       }
