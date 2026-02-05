@@ -1,6 +1,6 @@
 # switch-omo-config-json
 
-> 💡 **靈感來源**: [Switch-Omo-Config](https://github.com/AnPod/Switch-Omo-Config) by AnPod
+> 💡 **靈感來源**: [Switch-Omo-Config](https://github.com/AnPod/Switch-Omo-Config)（作者：AnPod）
 
 一個簡潔優雅的 **oh-my-opencode** 設定檔切換工具，支援互動式選單與專案本地配置管理。
 
@@ -8,8 +8,8 @@
 
 - 🎨 **現代化 TUI** - 使用 [gum](https://github.com/charmbracelet/gum) 提供優雅的互動式選單
 - 🗂️ **配置檔切換** - 快速在不同 oh-my-opencode 配置檔之間切換
-- 📍 **專案本地配置** - 自動偵測並支援專案層級的 `.opencode` 目錄
-- ☁️ **中央配置同步** - 可選將中央配置檔複製到專案目錄
+- 📍 **專案本地配置** - 偵測 `.opencode` 後可選擇專案或全域
+- ☁️ **全域配置同步** - 可選將全域配置檔複製到專案目錄
 - ✨ **視覺化回饋** - 即時顯示目前啟用的配置檔（使用 md5 比對）
 - 🎯 **One Dark Pro 配色** - 使用 VS Code 熱門主題的配色方案
 
@@ -47,13 +47,13 @@ switch-omo-config-json/
    - 按 `q` 或 `Ctrl+C` 取消
 
 3. **專案本地配置** (首次執行時詢問):
-   - 若偵測到當前目錄有 `.opencode` 目錄，將自動使用專案本地配置
+   - 若偵測到當前目錄有 `.opencode` 目錄，會詢問要使用「專案」或「全域」
    - 若無，會詢問是否要建立，並記住你的選擇
 
 
 ## 運作原理
 
-1. **配置檔來源**: 從 `$HOME/.config/opencode/` (中央) 或 `./.opencode/` (專案本地) 讀取 `oh-my-opencode-*.json`
+1. **配置檔來源**: 從 `$HOME/.config/opencode/` (全域) 或 `./.opencode/` (專案本地) 讀取 `oh-my-opencode-*.json`
 2. **目標檔案**: 將選擇的配置檔複製為 `oh-my-opencode.json`
 3. **目前配置偵測**: 使用 md5 雜湊比對，在選單中標記 ✓ 顯示目前啟用的配置
 
@@ -64,7 +64,7 @@ switch-omo-config-json/
 1. 建立新的 JSON 檔案，命名為 `oh-my-opencode-YourName.json`
 2. 放入配置目錄：
    - **本專案**: `configs/` 目錄
-   - **中央配置**: `~/.config/opencode/`
+   - **全域配置**: `~/.config/opencode/`
    - **專案本地**: 專案內的 `.opencode/`
 3. 執行腳本即可看到新配置
 
@@ -80,10 +80,13 @@ switch-omo-config-json/
 ## 常見問題
 
 **Q: 為什麼首次執行會問我要不要建立 `.opencode`？**
-A: 這是為了支援專案本地配置。若選「是」，後續在此專案執行腳本時會優先使用專案內的配置檔。
+A: 這是為了支援專案本地配置。若選「是」，後續在此專案執行腳本時即可選擇使用專案或全域配置。
 
-**Q: 如何清除已記住的选择？**
+**Q: 如何清除已記住的選擇？**
 A: 刪除 `.switch-omo-config.create-opencode` 檔案即可重新選擇。
+
+**Q: 我已經有 `.opencode`，為什麼還會被詢問？**
+A: 腳本會讓你每次決定使用「專案」或「全域」，避免自動選擇造成誤用。
 
 **Q: 沒有安裝 gum 怎麼辦？**
 A: gum 是必要條件，請先安裝才能使用本工具：`brew install gum`

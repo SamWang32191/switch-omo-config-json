@@ -1,77 +1,77 @@
 #!/bin/bash
-# Switch oh-my-opencode configuration profiles
-# Usage: ./switch-omo-config.sh
+# 切換 oh-my-opencode 設定檔
+# 用法：./switch-omo-config.sh
 
-# Check if gum is installed, exit if not
+# 檢查 gum 是否安裝，若未安裝則結束
 check_gum() {
     if ! command -v gum >/dev/null 2>&1; then
-        echo "Error: This script requires 'gum' to run."
-        echo "Please install gum first:"
+        echo "錯誤：此腳本需要 'gum' 才能執行。"
+        echo "請先安裝 gum："
         echo "  brew install gum"
         echo ""
-        echo "For other installation options, see: https://github.com/charmbracelet/gum"
+        echo "其他安裝方式請參考：https://github.com/charmbracelet/gum"
         exit 1
     fi
 }
 
-# Detect terminal theme (light/dark) based on macOS system appearance
-# Returns: sets global THEME_MODE to "dark" or "light"
+# 依據 macOS 系統外觀偵測終端機主題（亮/暗）
+# 回傳：設定全域 THEME_MODE 為 "dark" 或 "light"
 detect_terminal_theme() {
-    # Check if we're on macOS (defaults command exists)
+    # 檢查是否為 macOS（是否有 defaults 指令）
     if ! command -v defaults >/dev/null 2>&1; then
-        # Not macOS - default to dark for compatibility
+        # 非 macOS - 為相容性預設為暗色
         THEME_MODE="dark"
         return
     fi
-    
-    # On macOS: AppleInterfaceStyle = "Dark" when dark mode
-    # Key doesn't exist when in light mode (system default)
+
+    # 在 macOS：AppleInterfaceStyle = "Dark" 代表深色模式
+    # 亮色模式時此鍵不存在（系統預設）
     local appearance
     appearance=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
     
     if [[ "$appearance" == "Dark" ]]; then
         THEME_MODE="dark"
     else
-        # Key doesn't exist or has other value = light mode
+        # 鍵不存在或其他值 = 亮色模式
         THEME_MODE="light"
     fi
 }
 
-# Setup Gum theme - supports One Dark Pro (dark) and One Light Pro (light)
+# 設定 Gum 主題 - 支援 One Dark Pro（暗）與 One Light Pro（亮）
 setup_gum_theme() {
-    # Detect theme if not already set
+    # 若尚未設定則偵測主題
     if [[ -z "$THEME_MODE" ]]; then
         detect_terminal_theme
     fi
 
-    # Color palette based on theme
+    # 依主題選色盤
     if [[ "$THEME_MODE" == "light" ]]; then
-        # One Light Pro color palette
-        local bg="#fafafa"           # Background
-        local fg="#383a42"           # Foreground text
-        local blue="#4078f2"         # Primary accent (blue)
-        local green="#50a14f"        # Success (green)
-        local red="#e45649"          # Error (red)
-        local yellow="#c18401"       # Warning (yellow)
-        local purple="#a626a4"       # Secondary accent (purple)
-        local cyan="#0184bc"         # Tertiary accent (cyan)
-        local muted="#a0a1a7"        # Muted/secondary text
-        local unselected_bg="#e5e5e6" # Unselected button background
+        # One Light Pro 色盤
+        local bg="#fafafa"           # 背景
+        local fg="#383a42"           # 前景文字
+        local blue="#4078f2"         # 主色（藍）
+        local green="#50a14f"        # 成功（綠）
+        local red="#e45649"          # 錯誤（紅）
+        local yellow="#c18401"       # 警告（黃）
+        local purple="#a626a4"       # 次要色（紫）
+        local cyan="#0184bc"         # 第三色（青）
+        local muted="#a0a1a7"        # 輔助文字
+        local unselected_bg="#e5e5e6" # 未選取按鈕背景
     else
-        # One Dark Pro color palette (default)
-        local bg="#282c34"           # Background
-        local fg="#abb2bf"           # Foreground text
-        local blue="#61afef"         # Primary accent (blue)
-        local green="#98c379"        # Success (green)
-        local red="#e06c75"          # Error (red)
-        local yellow="#e5c07b"       # Warning (yellow)
-        local purple="#c678dd"       # Secondary accent (purple)
-        local cyan="#56b6c2"         # Tertiary accent (cyan)
-        local muted="#5c6370"        # Muted/secondary text
-        local unselected_bg="#3e4451" # Unselected button background
+        # One Dark Pro 色盤（預設）
+        local bg="#282c34"           # 背景
+        local fg="#abb2bf"           # 前景文字
+        local blue="#61afef"         # 主色（藍）
+        local green="#98c379"        # 成功（綠）
+        local red="#e06c75"          # 錯誤（紅）
+        local yellow="#e5c07b"       # 警告（黃）
+        local purple="#c678dd"       # 次要色（紫）
+        local cyan="#56b6c2"         # 第三色（青）
+        local muted="#5c6370"        # 輔助文字
+        local unselected_bg="#3e4451" # 未選取按鈕背景
     fi
 
-    # Export theme colors as global variables for use in show_menu
+    # 匯出主題色供 show_menu 使用
     export THEME_BG="$bg"
     export THEME_FG="$fg"
     export THEME_BLUE="$blue"
@@ -82,7 +82,7 @@ setup_gum_theme() {
     export THEME_CYAN="$cyan"
     export THEME_MUTED="$muted"
 
-    # Style settings
+    # 外觀設定
     export GUM_STYLE_BORDER="rounded"
     export GUM_STYLE_BORDER_FOREGROUND="$blue"
     export GUM_STYLE_FOREGROUND="$fg"
@@ -90,7 +90,7 @@ setup_gum_theme() {
     export GUM_STYLE_MARGIN="1 0"
     export GUM_STYLE_PADDING="2 4"
 
-    # Choose settings
+    # 選單設定
     export GUM_CHOOSE_CURSOR_FOREGROUND="$blue"
     export GUM_CHOOSE_ITEM_FOREGROUND="$fg"
     export GUM_CHOOSE_SELECTED_FOREGROUND="$green"
@@ -100,7 +100,7 @@ setup_gum_theme() {
     export GUM_CHOOSE_UNSELECTED_PREFIX="  "
     export GUM_CHOOSE_HEIGHT=15
 
-    # Confirm settings
+    # 確認對話框設定
     export GUM_CONFIRM_PROMPT_FOREGROUND="$fg"
     export GUM_CONFIRM_SELECTED_FOREGROUND="$bg"
     export GUM_CONFIRM_SELECTED_BACKGROUND="$green"
@@ -119,7 +119,15 @@ TARGET_FILE="$CONFIG_DIR/oh-my-opencode.json"
 use_project_config_dir="false"
 
 if [[ -d "$PROJECT_CONFIG_DIR" ]]; then
-    use_project_config_dir="true"
+    setup_gum_theme
+    gum style --margin "1 0" --padding "1 2" \
+        "偵測到專案已有 .opencode：$PROJECT_CONFIG_DIR"
+    selected_scope=$(gum choose "專案" "全域")
+    if [[ "$selected_scope" == "專案" ]]; then
+        use_project_config_dir="true"
+    else
+        use_project_config_dir="false"
+    fi
 else
     PROJECT_CREATE_CHOICE_FILE="$PROJECT_ROOT_DIR/.switch-omo-config.create-opencode"
 
@@ -131,9 +139,9 @@ else
     if [[ ! "$create_opencode" =~ ^[YyNn]$ ]]; then
             setup_gum_theme
             gum style --margin "1 0" --padding "1 2" \
-                "No .opencode directory detected in: $PROJECT_ROOT_DIR"
-            if gum confirm "Create .opencode directory here for project-local switching?" \
-                --default=false --affirmative "Yes" --negative "No"; then
+                "未在以下路徑偵測到 .opencode：$PROJECT_ROOT_DIR"
+            if gum confirm "要在此專案建立 .opencode 以使用專案層級切換嗎？" \
+                --default=false --affirmative "是" --negative "否"; then
                 create_opencode="y"
                 printf '%s\n' "y" > "$PROJECT_CREATE_CHOICE_FILE"
             else
@@ -146,7 +154,7 @@ else
         if mkdir -p "$PROJECT_CONFIG_DIR" && [[ -d "$PROJECT_CONFIG_DIR" ]]; then
             use_project_config_dir="true"
         else
-            echo "Error: Failed to create $PROJECT_CONFIG_DIR (check permissions)"
+            echo "錯誤：無法建立 $PROJECT_CONFIG_DIR（請檢查權限）"
             use_project_config_dir="false"
         fi
     fi
@@ -167,9 +175,9 @@ if [[ "$use_project_config_dir" == "true" ]]; then
         if [[ ! "$copy_profiles" =~ ^[YyNn]$ ]]; then
             setup_gum_theme
             gum style --margin "1 0" --padding "1 2" \
-                "Detected .opencode in: $PROJECT_CONFIG_DIR"
-            if gum confirm "Copy central oh-my-opencode-*.json profiles into project directory?" \
-                --default=false --affirmative "Yes" --negative "No"; then
+                "偵測到 .opencode：$PROJECT_CONFIG_DIR"
+            if gum confirm "要將全域的 oh-my-opencode-*.json 設定檔複製到專案目錄嗎？" \
+                --default=false --affirmative "是" --negative "否"; then
                 copy_profiles="y"
                 printf '%s\n' "y" > "$PROJECT_COPY_CHOICE_FILE"
             else
@@ -190,10 +198,10 @@ if [[ "$use_project_config_dir" == "true" ]]; then
     fi
 fi
 
-# Setup gum theme early
+# 先設定 gum 主題
 setup_gum_theme
 
-# Get list of config files (excluding the main one)
+# 取得設定檔清單（排除主檔）
 get_configs() {
     {
         find "$CONFIG_DIR" -maxdepth 1 -name "oh-my-opencode-*.json" -type f 2>/dev/null
@@ -201,17 +209,17 @@ get_configs() {
     } | sort -u
 }
 
-# Extract display name from filename (remove prefix and suffix)
-# Input: oh-my-opencode-Name.json → Output: Name
+# 從檔名取出顯示名稱（移除前綴與副檔名）
+# 輸入：oh-my-opencode-Name.json → 輸出：Name
 get_display_name() {
     local filename="$1"
     local basename_name
     basename_name=$(basename "$filename")
-    # Remove oh-my-opencode- prefix and .json suffix
+    # 移除 oh-my-opencode- 前綴與 .json 副檔名
     echo "${basename_name#oh-my-opencode-}" | sed 's/\.json$//'
 }
 
-# Get current active config by comparing content
+# 透過內容比對取得目前啟用的設定
 get_current() {
     if [[ ! -f "$TARGET_FILE" ]]; then
         echo ""
@@ -229,7 +237,7 @@ get_current() {
     echo ""
 }
 
-# Interactive menu using gum
+# 使用 gum 顯示互動選單
 show_menu() {
     local configs=()
     local names=()
@@ -242,7 +250,7 @@ show_menu() {
     if [[ ${#configs[@]} -eq 0 ]]; then
         setup_gum_theme
         gum style --foreground="$THEME_YELLOW" --margin "1 0" \
-            "No oh-my-opencode-*.json config files found in $CONFIG_DIR"
+            "在 $CONFIG_DIR 找不到 oh-my-opencode-*.json 設定檔"
         exit 1
     fi
 
@@ -250,7 +258,7 @@ show_menu() {
 
     setup_gum_theme
 
-    # Show styled header
+    # 顯示標題
         gum style \
             --border rounded \
             --border-foreground "$THEME_BLUE" \
@@ -259,9 +267,9 @@ show_menu() {
             --padding "2 4" \
             --align center \
             --width 50 \
-            "⚡ Switch oh-my-opencode Configuration"
+            "⚡ 切換 oh-my-opencode 設定"
 
-        # Prepare display names with active marker (show only the descriptive part)
+        # 準備含狀態標記的顯示名稱（僅顯示描述部分）
         local display_names=()
         for name in "${names[@]}"; do
             local display_name
@@ -273,23 +281,23 @@ show_menu() {
             fi
         done
 
-        # Use gum choose for selection
+        # 使用 gum choose 選擇
         local selected_display
         selected_display=$(printf "%s\n" "${display_names[@]}" | gum choose \
-            --header "Select configuration (● = active, ○ = inactive):" \
+            --header "選擇設定（● = 已啟用，○ = 未啟用）：" \
             --height 15)
 
-        # Check if user cancelled (empty selection)
+        # 使用者取消（空選擇）
         if [[ -z "$selected_display" ]]; then
-            gum style --foreground "$THEME_MUTED" --margin "1 0" "Cancelled."
+            gum style --foreground "$THEME_MUTED" --margin "1 0" "已取消。"
             exit 0
         fi
 
-        # Extract original name (remove marker prefix)
+        # 取出原始名稱（移除標記）
         local selected_name="${selected_display#● }"
         selected_name="${selected_name#○ }"
 
-        # Find selected index
+        # 尋找選取索引
         local selected_idx=-1
         for i in "${!names[@]}"; do
             local name_display
@@ -301,21 +309,21 @@ show_menu() {
         done
 
         if [[ $selected_idx -eq -1 ]]; then
-            gum style --foreground "$THEME_RED" --margin "1 0" "Error: Selection not found"
+            gum style --foreground "$THEME_RED" --margin "1 0" "錯誤：找不到選取項目"
             exit 1
         fi
 
         local selected_file="${configs[$selected_idx]}"
         local selected_basename="${names[$selected_idx]}"
 
-        # Check if already active
+        # 已經啟用
         if [[ "$selected_basename" == "$current" ]]; then
             gum style --foreground "$THEME_YELLOW" --margin "1 0" \
                 "$selected_name 已是目前啟用的配置。"
             exit 0
         fi
 
-        # Copy config
+        # 複製設定檔
         cp "$selected_file" "$TARGET_FILE"
 
         if [[ $? -eq 0 ]]; then
@@ -325,16 +333,16 @@ show_menu() {
                 --background "$THEME_BG" \
                 --margin "1 0" \
                 --padding "1 2" \
-                "✓ Switched to: $selected_name"
+                "✓ 已切換為：$selected_name"
             gum style --foreground "$THEME_MUTED" --margin "0" \
-                "Copied to: $TARGET_FILE"
+                "已複製到：$TARGET_FILE"
         else
             gum style --foreground "$THEME_RED" --margin "1 0" \
-                "✗ Error: Failed to copy config file"
+                "✗ 錯誤：複製設定檔失敗"
             exit 1
         fi
 }
 
-# Run
+# 執行
 check_gum
 show_menu
