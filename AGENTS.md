@@ -41,7 +41,7 @@ oh-my-opencode 設定檔切換工具，提供互動式 TUI 選單（使用 gum�
 
 **Antigravity 版**：使用 Antigravity/OpenAI 付費模型
 - sisyphus: `google/antigravity-claude-opus-4-5-thinking`
-- ultrabrain: `openai/gpt-5.2-codex`
+- ultrabrain: `openai/gpt-5.3-codex`
 - oracle: `openai/gpt-5.2`
 - quick: `google/antigravity-gemini-3-flash`
 
