@@ -27,11 +27,11 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "sisyphus-junior": {
-      "model": "openai/gpt-5.1-codex-mini",
+      "model": "openai/gpt-5.3-codex",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "OpenCode-Builder": {
-      "model": "openai/gpt-5.1-codex-mini",
+      "model": "openai/gpt-5.3-codex",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "oracle": {

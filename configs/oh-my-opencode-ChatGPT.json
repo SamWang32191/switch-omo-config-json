@@ -27,11 +27,13 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "sisyphus-junior": {
-      "model": "openai/gpt-5.1-codex-mini",
+      "model": "openai/gpt-5.3-codex",
+      "variant": "medium",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "OpenCode-Builder": {
-      "model": "openai/gpt-5.1-codex-mini",
+      "model": "openai/gpt-5.3-codex",
+      "variant": "medium",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "oracle": {
@@ -45,14 +47,7 @@
     },
     "explore": {
       "model": "google/antigravity-gemini-3-flash",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).",
-      "permission": {
-        "edit": "deny",
-        "ls":"allow",
-        "grep": "allow",
-        "bash": "ask",
-        "webfetch": "allow"
-      }
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "multimodal-looker": {
       "model": "google/antigravity-gemini-3-flash",
@@ -81,6 +76,7 @@
   "categories": {
     "visual-engineering": {
       "model": "google/antigravity-gemini-3-pro",
+      "variant": "high",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "ultrabrain": {
@@ -90,7 +86,7 @@
     },
     "artistry": {
       "model": "google/antigravity-gemini-3-pro",
-      "variant": "max",
+      "variant": "high",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "quick": {
@@ -98,7 +94,8 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "unspecified-low": {
-      "model": "openai/gpt-5.2",
+      "model": "openai/gpt-5.3-codex",
+      "variant": "medium",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "unspecified-high": {
