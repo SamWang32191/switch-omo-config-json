@@ -12,11 +12,11 @@
     "disabled": false,
     "default_builder_enabled": true,
     "planner_enabled": true,
-    "replace_plan": true
+    "replace_plan": false
   },
   "git_master": {
-    "commit_footer": false,
-    "include_co_authored_by": false
+    "commit_footer": true,
+    "include_co_authored_by": true
   },
   "agents": {
     "sisyphus": {
