@@ -22,7 +22,7 @@
   },
   "agents": {
     "sisyphus": {
-      "model": "google/antigravity-claude-opus-4-5-thinking",
+      "model": "google/antigravity-claude-opus-4-6-thinking",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).",
       "variant": "max"
     },
@@ -59,12 +59,12 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "prometheus": {
-      "model": "google/antigravity-claude-opus-4-5-thinking",
+      "model": "google/antigravity-claude-opus-4-6-thinking",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).",
       "variant": "max"
     },
     "metis": {
-      "model": "google/antigravity-claude-opus-4-5-thinking",
+      "model": "google/antigravity-claude-opus-4-6-thinking",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).",
       "variant": "max"
     },
@@ -102,7 +102,7 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "unspecified-high": {
-      "model": "google/antigravity-claude-opus-4-5-thinking",
+      "model": "google/antigravity-claude-opus-4-6-thinking",
       "variant": "max",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
