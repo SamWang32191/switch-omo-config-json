@@ -7,7 +7,12 @@
     "agents": false,
     "hooks": false
   },
-  "disabled_hooks": ["comment-checker"],
+  "disabled_hooks": [
+    "comment-checker"
+  ],
+  "disabled_skills": [
+    "playwright"
+  ],
   "sisyphus_agent": {
     "disabled": false,
     "default_builder_enabled": true,
@@ -28,6 +33,11 @@
       "model": "google/antigravity-gemini-3-flash",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
+    "plan": {
+      "model": "google/antigravity-gemini-3-pro",
+      "variant": "high",
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+    },
     "OpenCode-Builder": {
       "model": "google/antigravity-gemini-3-flash",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
@@ -43,14 +53,7 @@
     },
     "explore": {
       "model": "google/antigravity-gemini-3-flash",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).",
-      "permission": {
-        "edit": "deny",
-        "ls": "allow",
-        "grep": "allow",        
-        "bash": "ask",
-        "webfetch": "allow"
-      }
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "multimodal-looker": {
       "model": "google/antigravity-gemini-3-flash",

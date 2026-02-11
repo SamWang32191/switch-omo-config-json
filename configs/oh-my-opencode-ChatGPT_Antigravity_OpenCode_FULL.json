@@ -10,6 +10,9 @@
   "disabled_hooks": [
     "comment-checker"
   ],
+  "disabled_skills": [
+    "playwright"
+  ],
   "sisyphus_agent": {
     "disabled": false,
     "default_builder_enabled": true,
@@ -22,12 +25,17 @@
   },
   "agents": {
     "sisyphus": {
-      "model": "opencode/claude-opus-4-5",
+      "model": "opencode/claude-opus-4-6",
       "variant": "max",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "sisyphus-junior": {
       "model": "opencode/claude-sonnet-4-5",
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+    },
+    "plan": {
+      "model": "opencode/claude-opus-4-6",
+      "variant": "max",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "OpenCode-Builder": {
@@ -45,26 +53,19 @@
     },
     "explore": {
       "model": "google/antigravity-gemini-3-flash",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).",
-      "permission": {
-        "edit": "deny",
-        "ls": "allow",
-        "grep": "allow",        
-        "bash": "ask",
-        "webfetch": "allow"
-      }
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "multimodal-looker": {
       "model": "google/antigravity-gemini-3-flash",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "prometheus": {
-      "model": "opencode/claude-opus-4-5",
+      "model": "opencode/claude-opus-4-6",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).",
       "variant": "max"
     },
     "metis": {
-      "model": "opencode/claude-opus-4-5",
+      "model": "opencode/claude-opus-4-6",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).",
       "variant": "max"
     },
@@ -102,7 +103,7 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "unspecified-high": {
-      "model": "opencode/claude-opus-4-5",
+      "model": "opencode/claude-opus-4-6",
       "variant": "max",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
