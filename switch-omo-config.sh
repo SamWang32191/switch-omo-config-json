@@ -14,27 +14,10 @@ check_gum() {
     fi
 }
 
-# 依據 macOS 系統外觀偵測終端機主題（亮/暗）
-# 回傳：設定全域 THEME_MODE 為 "dark" 或 "light"
+# 固定使用深色主題
+# 回傳：設定全域 THEME_MODE 為 "dark"
 detect_terminal_theme() {
-    # 檢查是否為 macOS（是否有 defaults 指令）
-    if ! command -v defaults >/dev/null 2>&1; then
-        # 非 macOS - 為相容性預設為暗色
-        THEME_MODE="dark"
-        return
-    fi
-
-    # 在 macOS：AppleInterfaceStyle = "Dark" 代表深色模式
-    # 亮色模式時此鍵不存在（系統預設）
-    local appearance
-    appearance=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
-    
-    if [[ "$appearance" == "Dark" ]]; then
-        THEME_MODE="dark"
-    else
-        # 鍵不存在或其他值 = 亮色模式
-        THEME_MODE="light"
-    fi
+    THEME_MODE="dark"
 }
 
 # 設定 Gum 主題 - 支援 One Dark Pro（暗）與 One Light Pro（亮）
