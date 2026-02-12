@@ -50,15 +50,15 @@
       "variant": "high"
     },
     "librarian": {
-      "model": "google/antigravity-gemini-3-flash",
+      "model": "opencode/kimi-k2.5-free",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "explore": {
-      "model": "google/antigravity-gemini-3-flash",
+      "model": "opencode/kimi-k2.5-free",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "multimodal-looker": {
-      "model": "google/antigravity-gemini-3-flash",
+      "model": "opencode/kimi-k2.5-free",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "prometheus": {
@@ -83,7 +83,7 @@
   },
   "categories": {
     "visual-engineering": {
-      "model": "google/antigravity-gemini-3-pro",
+      "model": "opencode/kimi-k2.5-free",
       "variant": "high",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
@@ -93,12 +93,12 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "artistry": {
-      "model": "google/antigravity-gemini-3-pro",
+      "model": "opencode/kimi-k2.5-free",
       "variant": "high",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "quick": {
-      "model": "google/antigravity-gemini-3-flash",
+      "model": "opencode/kimi-k2.5-free",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "unspecified-low": {
@@ -112,7 +112,7 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "writing": {
-      "model": "google/antigravity-gemini-3-flash",
+      "model": "opencode/kimi-k2.5-free",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     }
   }
