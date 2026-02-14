@@ -1,0 +1,110 @@
+{
+    "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+    "claude_code": {
+        "mcp": false,
+        "commands": false,
+        "skills": false,
+        "agents": false,
+        "hooks": false
+    },
+    "disabled_hooks": [
+        "comment-checker"
+    ],
+    "disabled_skills": [
+        "playwright"
+    ],
+    "sisyphus_agent": {
+        "disabled": false,
+        "default_builder_enabled": true,
+        "planner_enabled": true,
+        "replace_plan": false
+    },
+    "git_master": {
+        "commit_footer": true,
+        "include_co_authored_by": true
+    },
+    "agents": {
+        "sisyphus": {
+            "model": "opencode/glm-5",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "sisyphus-junior": {
+            "model": "opencode/minimax-m2.5-free",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "OpenCode-Builder": {
+            "model": "opencode/minimax-m2.5-free",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "plan": {
+            "model": "opencode/glm-5",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "hephaestus": {
+            "model": "opencode/glm-5",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "oracle": {
+            "model": "opencode/glm-5",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "librarian": {
+            "model": "opencode/minimax-m2.5-free",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "explore": {
+            "model": "opencode/minimax-m2.5-free",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "multimodal-looker": {
+            "model": "opencode/minimax-m2.5-free",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "prometheus": {
+            "model": "opencode/glm-5",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "metis": {
+            "model": "opencode/glm-5",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "momus": {
+            "model": "opencode/glm-5",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "atlas": {
+            "model": "opencode/glm-5",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        }
+    },
+    "categories": {
+        "visual-engineering": {
+            "model": "opencode/glm-5",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "ultrabrain": {
+            "model": "opencode/glm-5",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "artistry": {
+            "model": "opencode/glm-5",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "quick": {
+            "model": "opencode/minimax-m2.5-free",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "unspecified-low": {
+            "model": "opencode/minimax-m2.5-free",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "unspecified-high": {
+            "model": "opencode/glm-5",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        },
+        "writing": {
+            "model": "opencode/minimax-m2.5-free",
+            "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+        }
+    }
+}
