@@ -25,7 +25,7 @@
   },
   "agents": {
     "sisyphus": {
-      "model": "opencode/kimi-k2.5-free",
+      "model": "opencode/minimax-m2.5-free",
       "variant": "max",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
@@ -34,7 +34,7 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "plan": {
-      "model": "opencode/kimi-k2.5-free",
+      "model": "opencode/minimax-m2.5-free",
       "variant": "max",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
@@ -43,7 +43,7 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "oracle": {
-      "model": "opencode/kimi-k2.5-free",
+      "model": "opencode/minimax-m2.5-free",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).",
       "variant": "high"
     },
@@ -60,12 +60,12 @@
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "prometheus": {
-      "model": "opencode/kimi-k2.5-free",
+      "model": "opencode/minimax-m2.5-free",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).",
       "variant": "max"
     },
     "metis": {
-      "model": "opencode/kimi-k2.5-free",
+      "model": "opencode/minimax-m2.5-free",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).",
       "variant": "max"
     },
@@ -81,7 +81,7 @@
   },
   "categories": {
     "visual-engineering": {
-      "model": "opencode/kimi-k2.5-free",
+      "model": "opencode/minimax-m2.5-free",
       "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
     },
     "ultrabrain": {
