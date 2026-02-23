@@ -80,7 +80,7 @@
             "variant": "medium"
         },
         "atlas": {
-            "model": "google/antigravity-claude-sonnet-4-5",
+            "model": "google/antigravity-claude-sonnet-4-6",
             "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
         }
     },
