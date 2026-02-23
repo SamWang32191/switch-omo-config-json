@@ -86,7 +86,7 @@
     },
     "categories": {
         "visual-engineering": {
-            "model": "google/antigravity-gemini-3-pro",
+            "model": "google/antigravity-gemini-3.1-pro",
             "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
         },
         "ultrabrain": {
@@ -95,7 +95,7 @@
             "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
         },
         "artistry": {
-            "model": "google/antigravity-gemini-3-pro",
+            "model": "google/antigravity-gemini-3.1-pro",
             "variant": "max",
             "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
         },
