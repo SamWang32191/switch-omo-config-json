@@ -27,100 +27,100 @@
     "sisyphus": {
       "model": "opencode/claude-opus-4-6",
       "variant": "max",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "sisyphus-junior": {
       "model": "openai/gpt-5.3-codex",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "plan": {
       "model": "openai/gpt-5.2",
       "variant": "high",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "OpenCode-Builder": {
       "model": "openai/gpt-5.3-codex",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "hephaestus": {
       "model": "openai/gpt-5.3-codex",
       "variant": "medium",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "oracle": {
       "model": "openai/gpt-5.2",
       "variant": "high",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "librarian": {
       "model": "opencode/minimax-m2.5-free",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "explore": {
       "model": "opencode/minimax-m2.5-free",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "multimodal-looker": {
       "model": "opencode/minimax-m2.5-free",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "prometheus": {
       "model": "opencode/claude-opus-4-6",
       "variant": "max",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "metis": {
       "model": "opencode/claude-opus-4-6",
       "variant": "max",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "momus": {
       "model": "openai/gpt-5.2",
       "variant": "medium",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "atlas": {
       "model": "openai/gpt-5.2",
       "variant": "medium",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     }
   },
   "categories": {
     "visual-engineering": {
       "model": "opencode/gemini-3-pro",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "ultrabrain": {
       "model": "openai/gpt-5.3-codex",
       "variant": "xhigh",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "deep": {
       "model": "openai/gpt-5.3-codex",
       "variant": "medium",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "artistry": {
       "model": "opencode/gemini-3-pro",
       "variant": "high",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "quick": {
       "model": "opencode/claude-haiku-4-5",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "unspecified-low": {
       "model": "opencode/claude-sonnet-4-5",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "unspecified-high": {
       "model": "openai/gpt-5.3-codex",
       "variant": "xhigh",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     },
     "writing": {
       "model": "opencode/gemini-3-flash",
-      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW)."
+      "prompt_append": "ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW)."
     }
   }
 }

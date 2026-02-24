@@ -30,7 +30,7 @@ oh-my-opencode 設定檔切換工具，提供互動式 TUI 選單（使用 gum�
 | `switch-omo-config.sh` | 主程式 | 互動式配置切換邏輯                |
 | `configs/*.json`       | 設定檔 | oh-my-opencode 代理與類別模型設定 |
 
-所有設定檔統一附加：`ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS answer in Traditional Chinese(zh_TW).`
+所有設定檔統一附加：`ALWAYS use the QUESTION TOOL if you need to ask user. ALWAYS thinking and answer in Traditional Chinese(zh_TW).`
 
 ## 腳本運作機制
 
