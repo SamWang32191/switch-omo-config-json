@@ -34,7 +34,7 @@
     "sisyphus": {
       "model": "openai/gpt-5.4",
       "variant": "medium",
-      "prompt_append": "---\n<MostImportantRules>\n- ALWAYS use the QUESTION TOOL if you need to ask user.\n- ALWAYS think and respond in Traditional Chinese (zh_TW)\n- Use skill: planning-with-files, lessons-learned.\n- DO NOT GIVE ME hand-wavy answers. I WILL have other LLM models review your responses for quality.\n</MostImportantRules>"
+      "prompt_append": "---\n<MostImportantRules>\n- ALWAYS use the QUESTION TOOL if you need to ask user.\n- ALWAYS think and respond in Traditional Chinese (zh_TW)\n- Use skill: lessons-learned.\n</MostImportantRules>"
     },
     "hephaestus": {
       "model": "openai/gpt-5.3-codex",
@@ -72,11 +72,6 @@
       "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文。如果需要問問題，請使用 QUESTION TOOL。"
     },
     "atlas": {
-      "model": "openai/gpt-5.4",
-      "variant": "medium",
-      "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文。如果需要問問題，請使用 QUESTION TOOL。"
-    },
-    "plan": {
       "model": "openai/gpt-5.4",
       "variant": "medium",
       "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文。如果需要問問題，請使用 QUESTION TOOL。"
