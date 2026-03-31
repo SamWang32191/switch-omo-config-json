@@ -1,5 +1,5 @@
 #!/bin/bash
-# 切換 oh-my-opencode 設定檔
+# 切換 oh-my-openagent 設定檔
 # 用法：./switch-omo-config.sh
 
 # 檢查 gum 是否安裝，若未安裝則結束
@@ -97,7 +97,7 @@ PROJECT_ROOT_DIR="$PWD"
 PROJECT_CONFIG_DIR="$PROJECT_ROOT_DIR/.opencode"
 
 CONFIG_DIR="$CENTRAL_CONFIG_DIR"
-TARGET_FILE="$CONFIG_DIR/oh-my-opencode.json"
+TARGET_FILE="$CONFIG_DIR/oh-my-openagent.json"
 
 use_project_config_dir="false"
 
@@ -145,11 +145,11 @@ fi
 
 if [[ "$use_project_config_dir" == "true" ]]; then
     CONFIG_DIR="$PROJECT_CONFIG_DIR"
-    TARGET_FILE="$CONFIG_DIR/oh-my-opencode.json"
+    TARGET_FILE="$CONFIG_DIR/oh-my-openagent.json"
 
     PROJECT_COPY_CHOICE_FILE="$PROJECT_CONFIG_DIR/.switch-omo-config.copy-profiles"
 
-    if compgen -G "$CENTRAL_CONFIG_DIR/oh-my-opencode-*.json" > /dev/null; then
+    if compgen -G "$CENTRAL_CONFIG_DIR/oh-my-openagent-*.json" > /dev/null; then
         copy_profiles=""
         if [[ -f "$PROJECT_COPY_CHOICE_FILE" ]]; then
             copy_profiles=$(tr -d ' \t\r\n' < "$PROJECT_COPY_CHOICE_FILE")
@@ -159,7 +159,7 @@ if [[ "$use_project_config_dir" == "true" ]]; then
             setup_gum_theme
             gum style --margin "1 0" --padding "1 2" \
                 "偵測到 .opencode：$PROJECT_CONFIG_DIR"
-            if gum confirm "要將全域的 oh-my-opencode-*.json 設定檔複製到專案目錄嗎？" \
+            if gum confirm "要將全域的 oh-my-openagent-*.json 設定檔複製到專案目錄嗎？" \
                 --default=false --affirmative "是" --negative "否"; then
                 copy_profiles="y"
                 printf '%s\n' "y" > "$PROJECT_COPY_CHOICE_FILE"
@@ -170,7 +170,7 @@ if [[ "$use_project_config_dir" == "true" ]]; then
         fi
 
         if [[ "$copy_profiles" =~ ^[Yy]$ ]]; then
-            for src in "$CENTRAL_CONFIG_DIR"/oh-my-opencode-*.json; do
+            for src in "$CENTRAL_CONFIG_DIR"/oh-my-openagent-*.json; do
                 dest="$PROJECT_CONFIG_DIR/$(basename "$src")"
                 if [[ -e "$dest" ]]; then
                     continue
@@ -187,19 +187,19 @@ setup_gum_theme
 # 取得設定檔清單（排除主檔）
 get_configs() {
     {
-        find "$CONFIG_DIR" -maxdepth 1 -name "oh-my-opencode-*.json" -type f 2>/dev/null
-        find "$SCRIPT_DIR/configs" -maxdepth 1 -name "oh-my-opencode-*.json" -type f 2>/dev/null
+        find "$CONFIG_DIR" -maxdepth 1 -name "oh-my-openagent-*.json" -type f 2>/dev/null
+        find "$SCRIPT_DIR/configs" -maxdepth 1 -name "oh-my-openagent-*.json" -type f 2>/dev/null
     } | sort -u
 }
 
 # 從檔名取出顯示名稱（移除前綴與副檔名）
-# 輸入：oh-my-opencode-Name.json → 輸出：Name
+# 輸入：oh-my-openagent-Name.json → 輸出：Name
 get_display_name() {
     local filename="$1"
     local basename_name
     basename_name=$(basename "$filename")
-    # 移除 oh-my-opencode- 前綴與 .json 副檔名
-    echo "${basename_name#oh-my-opencode-}" | sed 's/\.json$//'
+    # 移除 oh-my-openagent- 前綴與 .json 副檔名
+    echo "${basename_name#oh-my-openagent-}" | sed 's/\.json$//'
 }
 
 # 透過內容比對取得目前啟用的設定
@@ -233,7 +233,7 @@ show_menu() {
     if [[ ${#configs[@]} -eq 0 ]]; then
         setup_gum_theme
         gum style --foreground="$THEME_YELLOW" --margin "1 0" \
-            "在 $CONFIG_DIR 找不到 oh-my-opencode-*.json 設定檔"
+            "在 $CONFIG_DIR 找不到 oh-my-openagent-*.json 設定檔"
         exit 1
     fi
 
@@ -250,7 +250,7 @@ show_menu() {
             --padding "2 4" \
             --align center \
             --width 50 \
-            "⚡ 切換 oh-my-opencode 設定"
+            "⚡ 切換 oh-my-openagent 設定"
 
         # 準備含狀態標記的顯示名稱（僅顯示描述部分）
         local display_names=()
