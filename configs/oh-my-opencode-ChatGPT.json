@@ -10,9 +10,7 @@
   "disabled_hooks": [
     "comment-checker"
   ],
-  "disabled_skills": [
-    "playwright"
-  ],
+  "disabled_skills": [],
   "sisyphus_agent": {
     "disabled": false,
     "default_builder_enabled": true,
@@ -20,24 +18,17 @@
     "replace_plan": false
   },
   "git_master": {
-    "commit_footer": false,
-    "include_co_authored_by": false
-  },
-  "tmux": {
-    "enabled": true,
-    "layout": "main-vertical",
-    "main_pane_size": 60,
-    "main_pane_min_width": 120,
-    "agent_pane_min_width": 40
+    "commit_footer": true,
+    "include_co_authored_by": true
   },
   "agents": {
     "sisyphus": {
       "model": "openai/gpt-5.4",
       "variant": "medium",
-      "prompt_append": "---\n<MostImportantRules>\n- ALWAYS use the QUESTION TOOL if you need to ask user.\n- ALWAYS think and respond in Traditional Chinese (zh_TW)\n- Use skill: lessons-learned.\n</MostImportantRules>"
+      "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文。如果需要問問題，請使用 QUESTION TOOL。"
     },
     "hephaestus": {
-      "model": "openai/gpt-5.3-codex",
+      "model": "openai/gpt-5.4",
       "variant": "medium"
     },
     "oracle": {
@@ -46,10 +37,10 @@
       "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文。如果需要問問題，請使用 QUESTION TOOL。"
     },
     "librarian": {
-      "model": "minimax-coding-plan/MiniMax-M2.5"
+      "model": "openai/gpt-5.4-mini"
     },
     "explore": {
-      "model": "minimax-coding-plan/MiniMax-M2.5"
+      "model": "openai/gpt-5.4-mini"
     },
     "multimodal-looker": {
       "model": "openai/gpt-5.4",
@@ -77,21 +68,22 @@
       "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文。如果需要問問題，請使用 QUESTION TOOL。"
     },
     "OpenCode-Builder": {
-      "model": "minimax-coding-plan/MiniMax-M2.5",
-      "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文，不能使用簡體中文。如果需要問問題，請使用 QUESTION TOOL。"
+      "model": "opencode-go/minimax-m2.7",
+      "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文。"
+    },
+    "sisyphus-junior": {
+      "model": "openai/gpt-5.4-mini",
+      "variant": "medium",
+      "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文。"
     }
   },
   "categories": {
     "visual-engineering": {
-      "model": "minimax-coding-plan/MiniMax-M2.5"
-    },
-    "artistry": {
       "model": "openai/gpt-5.4",
-      "variant": "high",
-      "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文。如果需要問問題，請使用 QUESTION TOOL。"
+      "variant": "high"
     },
     "ultrabrain": {
-      "model": "openai/gpt-5.3-codex",
+      "model": "openai/gpt-5.4",
       "variant": "xhigh"
     },
     "deep": {
@@ -99,18 +91,23 @@
       "variant": "medium"
     },
     "quick": {
-      "model": "minimax-coding-plan/MiniMax-M2.5"
+      "model": "openai/gpt-5.4-mini"
     },
     "unspecified-low": {
-      "model": "minimax-coding-plan/MiniMax-M2.5"
+      "model": "openai/gpt-5.3-codex",
+      "variant": "medium"
     },
     "unspecified-high": {
       "model": "openai/gpt-5.3-codex",
       "variant": "medium"
     },
     "writing": {
-      "model": "minimax-coding-plan/MiniMax-M2.5",
-      "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文，不能使用簡體中文。如果需要問問題，請使用 QUESTION TOOL。"
+      "model": "openai/gpt-5.4",
+      "variant": "medium"
+    },
+    "artistry": {
+      "model": "openai/gpt-5.4",
+      "variant": "xhigh"
     }
   }
 }

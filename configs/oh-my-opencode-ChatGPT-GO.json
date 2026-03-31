@@ -99,6 +99,10 @@
     },
     "writing": {
       "model": "opencode-go/kimi-k2.5"
+    },
+    "artistry": {
+      "model": "openai/gpt-5.4",
+      "variant": "xhigh"
     }
   }
 }
