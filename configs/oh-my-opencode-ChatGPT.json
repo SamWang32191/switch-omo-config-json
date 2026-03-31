@@ -19,12 +19,17 @@
   },
   "git_master": {
     "commit_footer": true,
-    "include_co_authored_by": true
+    "include_co_authored_by": true,
+    "git_env_prefix": "GIT_MASTER=1"
   },
   "agents": {
     "sisyphus": {
       "model": "openai/gpt-5.4",
       "variant": "medium",
+      "ultrawork": {
+        "model": "openai/gpt-5.4",
+        "variant": "high"
+      },
       "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文。如果需要問問題，請使用 QUESTION TOOL。"
     },
     "hephaestus": {
