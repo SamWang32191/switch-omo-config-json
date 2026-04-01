@@ -3,7 +3,9 @@
   "disabled_hooks": [
     "comment-checker"
   ],
-  "disabled_skills": [],
+  "disabled_skills": [
+    "git-master"
+  ],
   "sisyphus_agent": {
     "disabled": false,
     "default_builder_enabled": true,
@@ -11,8 +13,8 @@
     "replace_plan": false
   },
   "git_master": {
-    "commit_footer": true,
-    "include_co_authored_by": true,
+    "commit_footer": false,
+    "include_co_authored_by": false,
     "git_env_prefix": "GIT_MASTER=1"
   },
   "agents": {
@@ -35,10 +37,10 @@
       "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文。如果需要問問題，請使用 QUESTION TOOL。"
     },
     "librarian": {
-      "model": "openai/gpt-5.3-codex-spark"
+      "model": "openai/gpt-5.4-mini"
     },
     "explore": {
-      "model": "openai/gpt-5.3-codex-spark"
+      "model": "openai/gpt-5.4-mini"
     },
     "multimodal-looker": {
       "model": "openai/gpt-5.4",
@@ -70,8 +72,8 @@
       "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文。"
     },
     "sisyphus-junior": {
-      "model": "openai/gpt-5.3-codex-spark",
-      "variant": "high",
+      "model": "openai/gpt-5.4-mini",
+      "variant": "medium",
       "prompt_append": "你必須使用繁體中文(zh_TW)回答所有問題。每次回覆都必須是繁體中文。"
     }
   },
