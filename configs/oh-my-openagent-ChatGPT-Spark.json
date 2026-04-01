@@ -1,13 +1,5 @@
 {
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
-  "claude_code": {
-    "mcp": false,
-    "commands": false,
-    "skills": false,
-    "agents": false,
-    "hooks": false,
-    "plugins": false
-  },
   "disabled_hooks": [
     "comment-checker"
   ],
