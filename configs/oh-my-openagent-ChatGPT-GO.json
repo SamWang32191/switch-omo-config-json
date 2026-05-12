@@ -8,28 +8,22 @@
   "disabled_skills": [
     "git-master"
   ],
-  "sisyphus_agent": {
-    "disabled": false,
-    "default_builder_enabled": true,
-    "planner_enabled": true,
-    "replace_plan": false
-  },
   "agents": {
     "sisyphus": {
       "model": "opencode-go/kimi-k2.6",
       "fallback_models": [
         {
-          "model": "openai/gpt-5.4-fast",
+          "model": "openai/gpt-5.5",
           "variant": "medium"
         }
       ]
     },
     "hephaestus": {
-      "model": "openai/gpt-5.4-fast",
+      "model": "openai/gpt-5.5-fast",
       "variant": "medium"
     },
     "oracle": {
-      "model": "openai/gpt-5.4-fast",
+      "model": "openai/gpt-5.5-fast",
       "variant": "high",
       "fallback_models": [
         {
@@ -38,19 +32,29 @@
       ]
     },
     "librarian": {
-      "model": "opencode-go/minimax-m2.7"
-    },
-    "explore": {
-      "model": "opencode-go/minimax-m2.7",
+      "model": "openai/gpt-5.4-mini-fast",
       "fallback_models": [
         {
-          "model": "openai/gpt-5.4-mini-fast",
-          "variant": "medium"
+          "model": "opencode-go/qwen3.5-plus"
+        },
+        {
+          "model": "opencode-go/minimax-m2.7"
+        }
+      ]
+    },
+    "explore": {
+      "model": "openai/gpt-5.4-mini-fast",
+      "fallback_models": [
+        {
+          "model": "opencode-go/qwen3.5-plus"
+        },
+        {
+          "model": "opencode-go/minimax-m2.7"
         }
       ]
     },
     "multimodal-looker": {
-      "model": "openai/gpt-5.4-fast",
+      "model": "openai/gpt-5.5-fast",
       "variant": "medium",
       "fallback_models": [
         {
@@ -59,7 +63,7 @@
       ]
     },
     "prometheus": {
-      "model": "openai/gpt-5.4-fast",
+      "model": "openai/gpt-5.5-fast",
       "variant": "high",
       "fallback_models": [
         {
@@ -68,7 +72,7 @@
       ]
     },
     "metis": {
-      "model": "openai/gpt-5.4-fast",
+      "model": "openai/gpt-5.5-fast",
       "variant": "high",
       "fallback_models": [
         {
@@ -77,7 +81,7 @@
       ]
     },
     "momus": {
-      "model": "openai/gpt-5.4-fast",
+      "model": "openai/gpt-5.5-fast",
       "variant": "xhigh",
       "fallback_models": [
         {
@@ -89,7 +93,7 @@
       "model": "opencode-go/kimi-k2.6",
       "fallback_models": [
         {
-          "model": "openai/gpt-5.4-fast",
+          "model": "openai/gpt-5.5-fast",
           "variant": "medium"
         },
         {
@@ -101,7 +105,7 @@
       "model": "opencode-go/kimi-k2.6",
       "fallback_models": [
         {
-          "model": "openai/gpt-5.4-fast",
+          "model": "openai/gpt-5.5-fast",
           "variant": "medium"
         },
         {
@@ -115,7 +119,7 @@
       "model": "opencode-go/glm-5.1"
     },
     "ultrabrain": {
-      "model": "openai/gpt-5.4-fast",
+      "model": "openai/gpt-5.5-fast",
       "variant": "xhigh",
       "fallback_models": [
         {
@@ -124,11 +128,14 @@
       ]
     },
     "deep": {
-      "model": "openai/gpt-5.4-fast",
+      "model": "openai/gpt-5.5-fast",
       "variant": "medium"
     },
+    "artistry": {
+      "model": "openai/gpt-5.5-fast"
+    },
     "quick": {
-      "model": "openai/gpt-5.4-fast-mini",
+      "model": "openai/gpt-5.4-mini-fast",
       "fallback_models": [
         {
           "model": "opencode-go/minimax-m2.7"
@@ -136,7 +143,7 @@
       ]
     },
     "unspecified-low": {
-      "model": "openai/gpt-5.3-codex",
+      "model": "openai/gpt-5.5-fast",
       "variant": "medium",
       "fallback_models": [
         {
@@ -148,8 +155,8 @@
       ]
     },
     "unspecified-high": {
-      "model": "openai/gpt-5.3-codex",
-      "variant": "high",
+      "model": "openai/gpt-5.5-fast",
+      "variant": "xhigh",
       "fallback_models": [
         {
           "model": "opencode-go/kimi-k2.6"
